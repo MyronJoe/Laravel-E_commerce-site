@@ -26,6 +26,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -87,6 +88,27 @@
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </form>
+
+                    @if (Route::has('login'))
+
+                        @auth
+                            <li class="">
+                                <x-app-layout>
+                                    
+                                </x-app-layout>
+                            </li>
+                        @else
+                        
+                            <li class="nav-item">
+                                <a class="btn btn-outline-primary mr-2 btn-sm" href="{{ route('login') }}">Login</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="btn btn-outline-warning btn-sm" href="{{ route('register') }}">Register</a>
+                            </li>
+                        @endauth
+
+                    @endif
                 </ul>
             </div>
         </nav>
