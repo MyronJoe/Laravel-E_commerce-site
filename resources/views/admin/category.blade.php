@@ -31,13 +31,15 @@
                 <!-- body -->
                 <div class="container-fluid p-0">
 
+                <a style="float: right;" class="btn btn-primary mb-2" href="{{ url('add_category') }}">Add Category</a>
+
                     <h1 class="h3 mb-3 text-center"><strong>All Category</strong></h1>
 
                     <div class="col-12 d-flex">
                         <div class="card flex-fill">
                             <div class="card-header">
 
-                                <h5 class="card-title mb-0">Latest Projects</h5>
+                                <h5 class="card-title mb-0">LCategories</h5>
                             </div>
                             <table class="table table-hover my-0">
                                 <thead>

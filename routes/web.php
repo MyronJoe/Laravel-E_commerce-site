@@ -36,3 +36,5 @@ Route::get('/product', [AdminController::class, 'product']);
 Route::get('/admin_view', [AdminController::class, 'admin_view']);
 
 Route::get('/view_category', [AdminController::class, 'view_category']);
+
+Route::get('/add_category', [AdminController::class, 'add_category']);
