@@ -37,25 +37,16 @@
 
                     <div class="col-12 ">
 
-                        <form>
-                            <div class="form-group">
-                                <label for="">Email address</label>
-                                <input type="text" class="form-control" placeholder="Enter email">
-                            </div>
+                        <form action="{{url('/add_categories')}}" method="POST">
+
+                            @csrf
 
                             <div class="form-group">
-                                <label for="">Password</label>
-                                <input type="text" class="form-control" placeholder="Password">
-                            </div>
-                         
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Example textarea</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label for="">Category Name</label>
+                                <input type="text" class="form-control" name="category_name" placeholder="Enter Category">
                             </div>
 
-                            <!-- <button type="submit" class="btn btn-primary mb-2">Submit</button> -->
-
-                            <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-2" value="submit">
+                            <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-2" value="Add Category">
                         </form>
 
 

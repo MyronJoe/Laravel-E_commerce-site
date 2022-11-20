@@ -84,4 +84,7 @@
 
         </ul>
     </div>
+
 </nav>
+
+@include('admin.successmsg')

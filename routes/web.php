@@ -38,3 +38,5 @@ Route::get('/admin_view', [AdminController::class, 'admin_view']);
 Route::get('/view_category', [AdminController::class, 'view_category']);
 
 Route::get('/add_category', [AdminController::class, 'add_category']);
+
+Route::post('/add_categories', [AdminController::class, 'add_categories']);
