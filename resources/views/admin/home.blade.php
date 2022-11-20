@@ -19,17 +19,17 @@
 
 <body>
     <div class="wrapper">
-    <!-- sidebar-header -->
-    @include('admin.sidebar')
+        <!-- sidebar-header -->
+        @include('admin.sidebar')
 
         <div class="main">
             <!-- header -->
             @include('admin.header')
-            
+
 
             <main class="content">
-                 <!-- body -->
-                 @include('admin.body')
+                <!-- body -->
+                @include('admin.body')
 
             </main>
 

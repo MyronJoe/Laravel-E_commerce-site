@@ -67,6 +67,14 @@
 
             </li>
 
+            <li class="nav-item dropdown mt-1">
+
+                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                    <img src="admin/img/avatars/avatar.jpg" class="avatar img-fluid rounded" alt="Charles Hall" />
+                </a>
+                
+            </li>
+
             <li class="nav-item dropdown pr-4">
                 <x-app-layout>
 
