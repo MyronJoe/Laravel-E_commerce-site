@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 
+use App\Models\product;
+
 class HomeController extends Controller
 {
     public function redirect(){
@@ -25,6 +27,8 @@ class HomeController extends Controller
 
     public function index(){
 
-        return view('home.userpage');
+        $product = product::all();
+
+        return view('home.userpage', compact('product'));
     }
 }
