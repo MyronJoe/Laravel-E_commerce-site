@@ -68,6 +68,18 @@ class AdminController extends Controller
 
         $data = new product();
 
+        $data->title = $request->title;
+        $data->description = $request->description;
+        $data->category = $request->category;
+        $data->price = $request->price;
+        $data->discount_price = $request->dis_price;
+        $data->quantity = $request->quantity;
+       
+        $imageName = time(). '_' . $request->image;
+        
+
+        $data->image = $imageName;
+
     }
 
     public function product(){

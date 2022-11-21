@@ -62,12 +62,12 @@
 
                             <div class="mt-3 form-group">
                                 <label for="">Price</label>
-                                <input type="text" name="price" class="form-control" placeholder="Price">
+                                <input type="number" name="price" class="form-control" placeholder="Price">
                             </div>
 
                             <div class="mt-3 form-group">
                                 <label for="">Discount Price</label>
-                                <input type="text" name="dis_price" class="form-control" placeholder="Discount Price">
+                                <input type="number" name="dis_price" class="form-control" placeholder="Discount Price">
                             </div>
 
                             <div class="mt-3 form-group">
