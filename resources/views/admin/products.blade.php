@@ -44,24 +44,35 @@
                             <table class="table table-hover my-0">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th class="d-none d-xl-table-cell">Start Date</th>
-                                        <th class="d-none d-xl-table-cell">End Date</th>
-                                        <th>Status</th>
-                                        <th class="d-none d-md-table-cell">Assignee</th>
+                                        <th>S/N</th>
+                                        <th>Image</th>
+                                        <th>Title</th>
+                                        <th class="d-none d-xl-table-cell">Category</th>
+                                        <th class="d-none d-xl-table-cell">Quantity</th>
+                                        <th>Price</th>
+                                        <th class="d-none d-md-table-cell">Discount Price</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    
+                                    @foreach($products as $key => $product)
                                     <tr>
-                                        <td>Project Apollo</td>
-                                        <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                        <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                        <td><span class="badge bg-success">Done</span></td>
-                                        <td class="d-none d-md-table-cell">Vanessa Tucker</td>
+                                        <td>{{$key + 1}}</td>
+                                        <td class="d-none d-xl-table-cell">
+                                            <img src="" alt="">
+                                        </td>
+                                        <td class="d-none d-xl-table-cell">{{$product->title}}</td>
+                                        <td class="d-none d-xl-table-cell">{{$product->category}}</td>
+                                        <td><span class="badge bg-success">{{$product->quantity}}</span></td>
+                                        <td class="d-none d-md-table-cell">{{$product->price}}</td>
+                                        <td class="d-none d-md-table-cell">{{$product->discount_price}}</td>
+                                        <td class="d-none d-md-table-cell">
+                                            <a href="#" class="btn btn-info">Edit</a>
+                                            <a href="{{url('delete_product', $product->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete this..?')">Delete</a>
+                                        </td>
                                     </tr>
-
+                                    @endforeach
                                 </tbody>
 
                             </table>
