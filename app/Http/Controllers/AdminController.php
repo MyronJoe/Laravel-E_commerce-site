@@ -60,7 +60,9 @@ class AdminController extends Controller
     //add product page
     public function add_product(){
 
-        return view('admin.add_products');
+        $data = category::all();
+
+        return view('admin.add_products', compact('data'));
     }
        
     //add product functions
@@ -76,7 +78,7 @@ class AdminController extends Controller
         $data->quantity = $request->quantity;
        
         $imageName = time(). '_' . $request->image;
-        
+
 
         $data->image = $imageName;
 

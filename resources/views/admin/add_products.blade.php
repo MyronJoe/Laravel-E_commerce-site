@@ -38,31 +38,34 @@
                     <div class="col-12 ">
 
                         <form action="{{url('addAllProducts')}}" method="POST" enctype="multipart/form-data">
+
+                            @csrf
+
                             <div class="mt-3 form-group">
                                 <label for="">Product Title</label>
-                                <input type="text" class="form-control" name="title" placeholder="Enter email">
+                                <input type="text" class="form-control" name="title" placeholder="Enter email" required>
                             </div>
 
                             <div class="mt-3 form-group">
                                 <label for="exampleFormControlTextarea1">Product Description</label>
-                                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required></textarea>
                             </div>
 
                             <div class="mt-3 form-group">
+                                
                                 <label for="exampleFormControlSelect1">Category</label>
-                                <select class="form-control" name="category" id="exampleFormControlSelect1">
-                                    <option value=""></option>
-                                    <option value="1">1</option>
-                                    <option value="1">2</option>
-                                    <option value="1">3</option>
-                                    <option value="1">4</option>
-                                    <option value="1">5</option>
+                                <select class="form-control" name="category" id="exampleFormControlSelect1" required>
+                                    <option value="" selected="">Choose a category</option>
+                                    @foreach($data as $data)
+                                        <option value="{{$data->category_name}}">{{$data->category_name}}</option>
+                                    @endforeach
                                 </select>
+                                
                             </div>
 
                             <div class="mt-3 form-group">
                                 <label for="">Price</label>
-                                <input type="number" name="price" class="form-control" placeholder="Price">
+                                <input type="number" name="price" class="form-control" placeholder="Price" required>
                             </div>
 
                             <div class="mt-3 form-group">
@@ -71,8 +74,13 @@
                             </div>
 
                             <div class="mt-3 form-group">
+                                <label for="">Product Quantity</label>
+                                <input type="number" name="quantity" min="0" class="form-control" placeholder="Product Quantity" required>
+                            </div>
+
+                            <div class="mt-3 form-group">
                                 <label for="exampleFormControlFile1">Product Image</label><br>
-                                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1" required>
                             </div>
                             
 
