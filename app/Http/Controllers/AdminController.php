@@ -85,8 +85,9 @@ class AdminController extends Controller
         $data->price = $request->price;
         $data->discount_price = $request->dis_price;
         $data->quantity = $request->quantity;
-        
-        $imageName = time(). '_' . $request->image->getClientOriginalName();
+       
+        // $imageName = time(). '_' . $request->image->getClientOriginalName();
+        $imageName = time(). '_' . $request->image->getClientOriginalExtension();
         $request->image->move('product', $imageName);
 
         $data->image = $imageName;
@@ -94,6 +95,17 @@ class AdminController extends Controller
         $data->save();
 
         return redirect('view_product')->with('message', 'Product Created successfully');
+    }
+
+    //delete product function
+    public function delete_product($id){
+
+        $data = product::find($id);
+
+        $data->delete();
+
+        return redirect('view_product')->with('message', 'Product deleted successfully');
+
     }
 
     
