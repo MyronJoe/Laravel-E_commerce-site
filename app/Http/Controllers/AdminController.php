@@ -108,7 +108,7 @@ class AdminController extends Controller
 
     }
 
-    //update product
+    //update product page
     public function update_product($id){
 
         $data = product::find($id);
@@ -119,7 +119,7 @@ class AdminController extends Controller
     }
 
 
-    //update product
+    //update product function
     public function updateAllProducts(Request $request, $id){
 
         $data = product::find($id);
@@ -131,11 +131,14 @@ class AdminController extends Controller
         $data->discount_price = $request->dis_price;
         $data->quantity = $request->quantity;
 
-        $imageName = time(). '_' . $request->image->getClientOriginalExtension();
-        $request->image->move('product', $imageName);
+        $image = $request->image;
+        if ($image) {
+            $imageName = time(). '_' . $image->getClientOriginalExtension();
+            $request->image->move('product', $imageName);
 
-        $data->image = $imageName;
-
+            $data->image = $imageName;
+        }
+        
         $data->save();
 
         return redirect('view_product')->with('message', 'Product updated successfully');

@@ -65,7 +65,7 @@
                                 <select class="form-control" name="category" id="exampleFormControlSelect1" required>
                                     <option value="{{$data->category}}" selected="">{{$data->category}}</option>
                                     @foreach($category as $category)
-                                        <option value="{{$data->category_name}}">{{$category->category_name}}</option>
+                                        <option value="{{$category->category_name}}">{{$category->category_name}}</option>
                                     @endforeach
                                 </select>
 
@@ -87,8 +87,8 @@
                             </div>
 
                             <div class="mt-3 form-group">
-                                <label for="exampleFormControlFile1">Product Image</label><br>
-                                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1" required>
+                                <label for="exampleFormControlFile1">Choose Product Image</label><br>
+                                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                             </div>
 
 
