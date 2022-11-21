@@ -60,7 +60,9 @@ class AdminController extends Controller
     //display product
     public function view_product(){
 
-        return view('admin.products');
+        $products = product::all();
+
+        return view('admin.products', compact('products'));
     }
 
 
