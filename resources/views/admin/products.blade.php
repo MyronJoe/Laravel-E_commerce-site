@@ -68,7 +68,8 @@
                                         <td class="d-none d-md-table-cell">{{$product->price}}</td>
                                         <td class="d-none d-md-table-cell">{{$product->discount_price}}</td>
                                         <td class="d-none d-md-table-cell">
-                                            <a href="#" class="btn btn-info">Edit</a>
+                                            <a href="{{url('update_product', $product->id)}}" class="btn btn-info">Edit</a>
+
                                             <a href="{{url('delete_product', $product->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete this..?')">Delete</a>
                                         </td>
                                     </tr>

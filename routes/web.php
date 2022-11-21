@@ -50,3 +50,7 @@ Route::get('/add_product', [AdminController::class, 'add_product']);
 Route::post('/addAllProducts', [AdminController::class, 'addAllProducts']);
 
 Route::get('/delete_product/{id}', [AdminController::class, 'delete_product']);
+
+Route::get('/update_product/{id}', [AdminController::class, 'update_product']);
+
+Route::post('/updateAllProducts/{id}', [AdminController::class, 'updateAllProducts']);
