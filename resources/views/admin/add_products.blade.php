@@ -31,7 +31,7 @@
                 <!-- body -->
                 <div class="container-fluid p-0">
 
-                    <a style="float: right;" class="btn btn-primary mb-2" href="{{ url('product') }}">View Products</a>
+                    <a style="float: right;" class="btn btn-primary mb-2" href="{{ url('view_product') }}">View Products</a>
 
                     <h1 class="h3 mb-3 text-center"><strong>Add Product</strong></h1>
 

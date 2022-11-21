@@ -57,6 +57,13 @@ class AdminController extends Controller
     }
 
 
+    //display product
+    public function view_product(){
+
+        return view('admin.products');
+    }
+
+
     //add product page
     public function add_product(){
 
@@ -77,16 +84,17 @@ class AdminController extends Controller
         $data->discount_price = $request->dis_price;
         $data->quantity = $request->quantity;
        
-        $imageName = time(). '_' . $request->image;
-
+        $img = $request->image;
+        $imageName = time(). '_' . $img->getClientOriginalExtension();
+        $request->image->move('product', $imageName);
 
         $data->image = $imageName;
 
+        $data->save();
+
+        return redirect('view_product')->with('message', 'Product Created successfully');
     }
 
-    public function product(){
-
-        return view('admin.products');
-    }
+    
 
 }

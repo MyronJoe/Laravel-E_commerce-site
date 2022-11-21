@@ -16,7 +16,7 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link d-flex" href="{{ url('product') }}">
+                <a class="sidebar-link d-flex" href="{{ url('view_product') }}">
                     <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Products</span>
                 </a>
             </li>
