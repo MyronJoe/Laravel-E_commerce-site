@@ -41,4 +41,8 @@ Route::get('/add_category', [AdminController::class, 'add_category']);
 
 Route::post('/add_categories', [AdminController::class, 'add_categories']);
 
+Route::post('/addAllProducts', [AdminController::class, 'addAllProducts']);
+
 Route::get('/delete_category/{id}', [AdminController::class, 'delete_category']);
+
+Route::get('/add_product', [AdminController::class, 'add_product']);

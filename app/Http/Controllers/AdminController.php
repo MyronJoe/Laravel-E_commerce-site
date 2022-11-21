@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\category;
 
+use App\Models\product;
+
 class AdminController extends Controller
 {
     //admin homepage route
@@ -55,7 +57,18 @@ class AdminController extends Controller
     }
 
 
+    //add product page
+    public function add_product(){
+
+        return view('admin.add_products');
+    }
        
+    //add product functions
+    public function addAllProducts(Request $request){
+
+        $data = new product();
+
+    }
 
     public function product(){
 

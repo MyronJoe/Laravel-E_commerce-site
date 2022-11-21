@@ -31,31 +31,54 @@
                 <!-- body -->
                 <div class="container-fluid p-0">
 
-                    <a style="float: right;" class="btn btn-primary mb-2" href="{{ url('view_category') }}">View Category</a>
+                    <a style="float: right;" class="btn btn-primary mb-2" href="{{ url('product') }}">View Products</a>
 
-                    <h1 class="h3 mb-3 text-center"><strong>Add Category</strong></h1>
+                    <h1 class="h3 mb-3 text-center"><strong>Add Product</strong></h1>
 
                     <div class="col-12 ">
 
-                        <form>
-                            <div class="form-group">
-                                <label for="">Email address</label>
-                                <input type="text" class="form-control" placeholder="Enter email">
+                        <form action="{{url('addAllProducts')}}" method="POST" enctype="multipart/form-data">
+                            <div class="mt-3 form-group">
+                                <label for="">Product Title</label>
+                                <input type="text" class="form-control" name="title" placeholder="Enter email">
                             </div>
 
-                            <div class="form-group">
-                                <label for="">Password</label>
-                                <input type="text" class="form-control" placeholder="Password">
+                            <div class="mt-3 form-group">
+                                <label for="exampleFormControlTextarea1">Product Description</label>
+                                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
-                         
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Example textarea</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                            <div class="mt-3 form-group">
+                                <label for="exampleFormControlSelect1">Category</label>
+                                <select class="form-control" name="category" id="exampleFormControlSelect1">
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="1">2</option>
+                                    <option value="1">3</option>
+                                    <option value="1">4</option>
+                                    <option value="1">5</option>
+                                </select>
                             </div>
+
+                            <div class="mt-3 form-group">
+                                <label for="">Price</label>
+                                <input type="text" name="price" class="form-control" placeholder="Price">
+                            </div>
+
+                            <div class="mt-3 form-group">
+                                <label for="">Discount Price</label>
+                                <input type="text" name="dis_price" class="form-control" placeholder="Discount Price">
+                            </div>
+
+                            <div class="mt-3 form-group">
+                                <label for="exampleFormControlFile1">Product Image</label><br>
+                                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                            
 
                             <!-- <button type="submit" class="btn btn-primary mb-2">Submit</button> -->
 
-                            <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-2" value="submit">
+                            <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-4" value="submit">
                         </form>
 
 
