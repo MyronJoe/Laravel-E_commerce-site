@@ -43,7 +43,7 @@
 
                             <div class="mt-3 form-group">
                                 <label for="">Product Title</label>
-                                <input type="text" class="form-control" name="title" placeholder="Enter email" required>
+                                <input type="text" class="form-control" name="title" placeholder="Enter Titile" required>
                             </div>
 
                             <div class="mt-3 form-group">
@@ -86,7 +86,7 @@
 
                             <!-- <button type="submit" class="btn btn-primary mb-2">Submit</button> -->
 
-                            <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-4" value="submit">
+                            <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-4" value="Add Product">
                         </form>
 
 

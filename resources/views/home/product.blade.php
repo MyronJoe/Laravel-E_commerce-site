@@ -6,16 +6,23 @@
             </h2>
         </div>
         <div class="row">
-            @foreach($product as $product)
+            @foreach($products as $product)
             <div class="col-sm-6 col-md-4 col-lg-4">
                 <div class="box">
                     <div class="category">
                         <p class="bg-danger px-3 py-1 text-light">category: {{$product->category}}</p>
 
-                        <h6 class="bg-danger px-3 py-1 text-light mt-1">
-                            Price:
-                            <span style="text-decoration: line-through;">${{$product->price}}</span>
-                        </h6>
+                        @if($product->discount_price != null)
+                            <h6 class="bg-danger px-3 py-1 text-light mt-1">
+                                Price:
+                                <span style="text-decoration: line-through;">${{$product->price}}</span>
+                            </h6>
+                        @else
+                            <h6 class="bg-danger px-3 py-1 text-light mt-1">
+                                Price:
+                                <span>${{$product->price}}</span>
+                            </h6>
+                        @endif
                     </div>
                     <div class="option_container">
                         <div class="options">
@@ -34,19 +41,23 @@
                         <h5>
                             {{$product->title}}
                         </h5>
+                        @if($product->discount_price != null)
                         <h6>
                             D-Price:
-                            {{$product->discount_price}}
+                            ${{$product->discount_price}}
                         </h6>
-                        
+                        @else
+                            Price:
+                            ${{$product->price}}
+                        @endif
                     </div>
                 </div>
             </div>
             @endforeach
-        <div class="btn-box">
-            <a href="">
-                View All products
-            </a>
+
+            
+        <div class="mt-3 text-center" style="width: 300px; margin:auto;">
+            {!!$products->withQueryString()->links('pagination::bootstrap-5')!!}
         </div>
     </div>
 </section>
