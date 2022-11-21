@@ -85,9 +85,8 @@ class AdminController extends Controller
         $data->price = $request->price;
         $data->discount_price = $request->dis_price;
         $data->quantity = $request->quantity;
-       
-        $img = $request->image;
-        $imageName = time(). '_' . $img->getClientOriginalExtension();
+        
+        $imageName = time(). '_' . $request->image->getClientOriginalName();
         $request->image->move('product', $imageName);
 
         $data->image = $imageName;
