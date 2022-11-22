@@ -33,28 +33,39 @@
         <div class="row p-5">
             <div class="col-sm-12 col-md-6 p-5">
 
-                <img src="product/{{$product->image}}" alt="" style="width: 100%;">
+                <img src="product/{{$product->image}}" alt="" style="width: 100%; height:270px; object-fit:cover;">
 
             </div>
 
 
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6 py-5">
 
-                <h1 class="text-center font" >Product Details</h1>
+                <h1 class="text-center font bg-danger px-3 py-1 text-light mt-1">Product Details</h1>
 
-                <h2 class="font">Title: {{$product->title}}</h2>
+                <div class="detail-box">
+                    <h5 class="mt-2">
+                        Title: {{$product->title}}
+                    </h5>
 
-                <h2 class="font">Description: {{$product->description}}</h2>
+                    <h6 class="mt-2">Description: {{$product->description}}</h6>
 
-                <h2 class="font">Category: {{$product->category}}</h2>
-
-                <h2 class="font">Price: ${{$product->price}}</h2>
-
-                <h2 class="font">Discount Price: ${{$product->discount_price}}</h2>
-
-                <h2 class="font">Quantity: {{$product->quantity}}</h2>
+                    <h6 class="mt-2">category: {{$product->category}}</h6>
 
 
+                    <h6 class="mt-2">Price: ${{$product->price}}</h6>
+
+                    @if($product->discount_price != null)
+                    <h6 class="mt-2">
+                        Discount Price:
+                        ${{$product->discount_price}}
+                    </h6>
+                    @endif
+
+                    <h6 class="mt-2">Available Quantity: {{$product->quantity}}</h6>
+                </div>
+
+
+                <a href="" class="btn btn-info mt-4">Add to cart</a>
             </div>
         </div>
 
