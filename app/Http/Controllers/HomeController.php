@@ -77,4 +77,12 @@ class HomeController extends Controller
         }
 
     }
+
+    
+    //view cart
+    public function view_cart(){
+
+        $data = cart::all();
+
+    }
 }
