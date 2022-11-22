@@ -92,5 +92,6 @@ class HomeController extends Controller
 
         $data = cart::all();
 
+        return view('home.view_cart');
     }
 }
