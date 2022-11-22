@@ -90,8 +90,30 @@ class HomeController extends Controller
     //view cart
     public function view_cart(){
 
-        $data = cart::all();
+        if(Auth::id()){
 
-        return view('home.view_cart');
+            $id = Auth::user()->id;
+
+            $datas = cart::where('user_id', '=', $id)->get();
+
+            $counter = cart::where('user_id', '=', $id)->count();
+
+            return view('home.view_cart', compact('datas', 'counter'));
+
+        }else{
+
+            return redirect('login');
+        }
+    }
+
+
+    // remove from cart
+    public function remove_cart($id){
+
+        $cart = cart::find($id);
+
+        $cart->delete();
+
+        return redirect('view_cart')->with('message', 'Cart was removed successfully');
     }
 }

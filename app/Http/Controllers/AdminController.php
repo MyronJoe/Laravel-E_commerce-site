@@ -8,12 +8,33 @@ use App\Models\category;
 
 use App\Models\product;
 
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\User;
+
 class AdminController extends Controller
 {
     //admin homepage route
     public function admin_view(){
 
-        return view('admin.home');
+        
+
+        if (Auth::id()) {
+
+            $usertype = Auth::user()->usertype;
+
+            if ($usertype == '1') {
+
+                return view('admin.home');
+            }else{
+                return redirect('/');
+            }
+            
+        }else{
+            return redirect('/');
+        }
+
+        
     }
 
 

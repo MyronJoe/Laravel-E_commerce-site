@@ -116,4 +116,6 @@
             </div>
         </nav>
     </div>
+    @include('admin.successmsg')
 </header>
+
