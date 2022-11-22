@@ -15,6 +15,11 @@
     <link rel="shortcut icon" href="home/images/favicon.png" type="">
     <title>Myron Stores</title>
     @include('home.css')
+    <style>
+        .font{
+            font-family:'Trebuchet MS';
+        }
+    </style>
 </head>
 
 <body>
@@ -23,19 +28,32 @@
     <!-- end header section -->
 
 
-    <div class="details">
+    <div class="details container" style="font-family:'Trebuchet MS';">
 
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
+        <div class="row p-5">
+            <div class="col-sm-12 col-md-6 p-5">
 
-                <img src="" alt="">
+                <img src="product/{{$product->image}}" alt="" style="width: 100%;">
 
             </div>
 
 
             <div class="col-sm-12 col-md-6">
 
-                <h2>{{$product->title}}</h2>
+                <h1 class="text-center font" >Product Details</h1>
+
+                <h2 class="font">Title: {{$product->title}}</h2>
+
+                <h2 class="font">Description: {{$product->description}}</h2>
+
+                <h2 class="font">Category: {{$product->category}}</h2>
+
+                <h2 class="font">Price: ${{$product->price}}</h2>
+
+                <h2 class="font">Discount Price: ${{$product->discount_price}}</h2>
+
+                <h2 class="font">Quantity: {{$product->quantity}}</h2>
+
 
             </div>
         </div>
