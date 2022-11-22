@@ -65,7 +65,15 @@
                 </div>
 
 
-                <a href="" class="btn btn-info mt-4">Add to cart</a>
+                <form action="{{url('add_cart', $product->id)}}" method="POST" class="mt-4">
+
+                    @csrf
+                    
+                    <input type="number" class="mr-3 mt-1" style="width: 60px; float:left;" min="1" name="quantity" value="1">
+
+                    <input type="submit" value="Add to cart" style="border-radius: 60px; float:left;">
+
+                </form>
             </div>
         </div>
 

@@ -49,9 +49,11 @@ class HomeController extends Controller
 
         if(Auth::id()){
 
+            $cart = new cart();
+
             $product = product::find($id);
             $user = Auth::user();
-            $cart = new cart();
+            
 
             $cart->name=$user->name;
             $cart->email=$user->email;
@@ -60,16 +62,22 @@ class HomeController extends Controller
             $cart->user_id=$user->id;
 
             $cart->product_title=$product->title;
-            $cart->price=$product->price;
+
+            if ($product->discount_price != null) {
+                $cart->price=$product->discount_price * $request->quantity;
+            }else{
+                $cart->price=$product->price * $request->quantity;
+            }
+
             $cart->image=$product->image;
             $cart->product_id=$product->id;
 
             $cart->quantity=$request->quantity;
 
 
-            $cart()->save();
+            $cart->save();
 
-            // return redirect()->back();
+            return redirect()->back();
 
         }else{
 
