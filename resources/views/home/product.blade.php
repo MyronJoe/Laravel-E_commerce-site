@@ -29,9 +29,18 @@
                             <a href="{{url('product_detail', $product->id)}}" class="option1">
                                 Product Details
                             </a>
-                            <a href="" class="option2">
-                                Buy Now
-                            </a>
+
+
+                            <form action="{{url('add_cart', $product->id)}}" method="POST">
+
+                                @csrf
+                                
+                                <input type="number" style="width: 60px; margin-left:50px" min="1" name="quantity" value="1">
+
+                                <input type="submit" value="Add to cart" style="border-radius: 60px;">
+
+                            </form>
+
                         </div>
                     </div>
                     <div class="img-box">
