@@ -43,12 +43,15 @@
                         </h5>
                         @if($product->discount_price != null)
                         <h6>
-                            D-Price:
+                            Discount Price:
+                            <br>
                             ${{$product->discount_price}}
                         </h6>
                         @else
+                            <h6>
                             Price:
                             ${{$product->price}}
+                            </h6>
                         @endif
                     </div>
                 </div>
