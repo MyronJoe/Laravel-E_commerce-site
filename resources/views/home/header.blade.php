@@ -94,22 +94,22 @@
 
                     @if (Route::has('login'))
 
-                        @auth
-                            <li class="">
-                                <x-app-layout>
-                                    
-                                </x-app-layout>
-                            </li>
-                        @else
-                        
-                            <li class="nav-item">
-                                <a class="btn btn-outline-primary mr-2 btn-sm" href="{{ route('login') }}">Login</a>
-                            </li>
+                    @auth
+                    <li class="">
+                        <x-app-layout>
 
-                            <li class="nav-item">
-                                <a class="btn btn-outline-warning btn-sm" href="{{ route('register') }}">Register</a>
-                            </li>
-                        @endauth
+                        </x-app-layout>
+                    </li>
+                    @else
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary mr-2 btn-sm" href="{{ route('login') }}">Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-warning btn-sm" href="{{ route('register') }}">Register</a>
+                    </li>
+                    @endauth
 
                     @endif
                 </ul>
@@ -118,4 +118,3 @@
     </div>
     @include('admin.successmsg')
 </header>
-
