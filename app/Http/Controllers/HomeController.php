@@ -14,6 +14,10 @@ use App\Models\User;
 
 use App\Models\product;
 
+use Session;
+
+use Stripe;
+
 class HomeController extends Controller
 {
     public function redirect(){
@@ -160,5 +164,12 @@ class HomeController extends Controller
         }
 
         return redirect('/')->with('message', 'Your order was recived successfully, we will get back to you soon');;
+    }
+
+
+    public function stripe($totalPrice){
+
+
+        return view('home.stripe', compact('totalPrice'));
     }
 }
