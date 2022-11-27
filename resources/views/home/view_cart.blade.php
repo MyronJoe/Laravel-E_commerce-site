@@ -77,7 +77,7 @@
 
                     <h5 class="card-title mx-4">Total Price: ${{$totalPrice}}</h5>
 
-                    <a href="" class="btn btn-sm btn-danger">Button</a>
+                    <a href="" class="btn btn-sm btn-danger">Pay with your card</a>
                 </div>
             </div>
         </div>
