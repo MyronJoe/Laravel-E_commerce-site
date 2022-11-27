@@ -73,7 +73,7 @@
                     </tbody>
                 </table>
                 <div class="card-header" style="display: flex; justify-content:center; align-items:center">
-                    <a href="" class="btn btn-sm btn-danger">Button</a>
+                    <a href="{{url('cash_order')}}" class="btn btn-sm btn-danger">Cash on delivery</a>
 
                     <h5 class="card-title mx-4">Total Price: ${{$totalPrice}}</h5>
 
