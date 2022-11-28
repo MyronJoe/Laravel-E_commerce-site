@@ -9,10 +9,17 @@
     
 <div class="container pt-3">
     
+    
     <h1 class="text-center">Myron Stores Payment Section <br/>Payable = ${{$totalPrice}}</h1>
     
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
+            <div class="pb-3">
+                <a class="text-center btn btn-primary pb-3" href="{{url('/')}}">Home</a>
+
+                <a class="text-center btn btn-primary pb-3" href="{{url('/view_cart')}}">Cart</a>
+            </div>
+
             <div class="panel panel-default credit-card-box">
                 <div class="panel-heading display-table" >
                         <h3 class="panel-title" >Payment Details</h3>
@@ -28,7 +35,7 @@
     
                     <form 
                             role="form" 
-                            action="{{ route('stripe.post') }}"
+                            action="{{ route('stripe.post', $totalPrice) }}"
                             method="post" 
                             class="require-validation"
                             data-cc-on-file="false"
