@@ -28,8 +28,8 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link d-flex" href="pages-sign-in.html">
-                    <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
+                <a class="sidebar-link d-flex" href="{{ url('view_orders') }}">
+                    <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Orders</span>
                 </a>
             </li>
 

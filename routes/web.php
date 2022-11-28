@@ -43,6 +43,7 @@ Route::post('/add_categories', [AdminController::class, 'add_categories']);
 Route::get('/delete_category/{id}', [AdminController::class, 'delete_category']);
 
 
+
 Route::get('/view_product', [AdminController::class, 'view_product']);
 
 Route::get('/add_product', [AdminController::class, 'add_product']);
@@ -68,3 +69,5 @@ Route::get('/cash_order', [HomeController::class, 'cash_order']);
 Route::get('/stripe/{totalPrice}', [HomeController::class, 'stripe']);
 
 Route::post('/stripe/{totalPrice}', [HomeController::class, 'stripePost'])->name('stripe.post');
+
+Route::get('/view_orders', [AdminController::class, 'view_orders']);

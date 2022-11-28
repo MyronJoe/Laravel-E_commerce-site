@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\category;
 
+use App\Models\order;
+
 use App\Models\product;
 
 use Illuminate\Support\Facades\Auth;
@@ -164,6 +166,15 @@ class AdminController extends Controller
 
         return redirect('view_product')->with('message', 'Product updated successfully');
 
+    }
+
+
+    public function view_orders(){
+
+        $orders = order::all();
+
+
+        return view('admin.orders', compact('orders'));
     }
 
     
