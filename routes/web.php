@@ -29,7 +29,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/redirect', [HomeController::class, 'redirect']);
+Route::get('/redirect', [HomeController::class, 'redirect'])->middleware('auth', 'verified');
 
 Route::get('/admin_view', [AdminController::class, 'admin_view']);
 
