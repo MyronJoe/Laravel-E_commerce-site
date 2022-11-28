@@ -195,5 +195,15 @@ class AdminController extends Controller
     }
 
     
+    //print pdf function
+    public function print_pdf($id){
+
+        // $order = order::find($id);
+
+        return view('admin.pdf');
+
+    }
+
+    
 
 }
