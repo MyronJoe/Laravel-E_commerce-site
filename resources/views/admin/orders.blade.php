@@ -54,6 +54,7 @@
                                         <th>Payment Status</th>
                                         <th>Delivery Status</th>
                                         <th>Delivered</th>
+                                        <th>Print PDF</th>
                                     </tr>
                                 </thead>
 
@@ -104,6 +105,9 @@
                                             </td>
                                         @endif
                                         
+                                        <td class="">
+                                            <a onclick="return confirm('Do you want to print PDF...?')" class="btn btn-secondary" href="{{url('print_pdf', $order->id)}}">Print</a>
+                                        </td>
                                     
                                     </tr>
                                     @endforeach
