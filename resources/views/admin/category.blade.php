@@ -46,7 +46,7 @@
                                     <tr>
                                         <th>S/N</th>
                                         <th>Category Name</th>
-                                        <th class="d-none d-xl-table-cell">Action</th>
+                                        <th class="">Action</th>
                                         
                                     </tr>
                                 </thead>
@@ -56,8 +56,8 @@
 
                                         <tr>
                                             <td>{{ $key + 1}}</td>
-                                            <td class="d-none d-xl-table-cell">{{$data->category_name}}</td>
-                                            <td class="d-none d-xl-table-cell">
+                                            <td class="">{{$data->category_name}}</td>
+                                            <td class="">
                                                 <a href="#" class="btn btn-info">Edit</a>
                                                 <a href="{{url('delete_category', $data->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete this..?')">Delete</a>
                                             </td>

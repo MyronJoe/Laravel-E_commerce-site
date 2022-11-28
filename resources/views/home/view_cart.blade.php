@@ -33,7 +33,7 @@
         <h5 class="ml-3 mb-2">Number of cart Products: <span class="badge bg-success p-2 text-light">{{$counter}}</span></h5>
 
         <div class="col-12 d-flex">
-            <div class="card flex-fill">
+            <div class="card flex-fill" style="overflow-x: auto;">
                 <div class="card-header">
                     @foreach($datas as $key => $data)
                     @if($key < 1) <h5 class="card-title mb-0">Cart Product Of {{$data->name}}</h5>
@@ -44,11 +44,11 @@
                     <thead>
                         <tr>
                             <th>S/N</th>
-                            <th class="d-none d-xl-table-cell">Image</th>
-                            <th class="d-none d-xl-table-cell">Product Title</th>
-                            <th class="d-none d-xl-table-cell">Quantity</th>
+                            <th class="">Image</th>
+                            <th class="">Product Title</th>
+                            <th class="">Quantity</th>
                             <th>Price</th>
-                            <th class="d-none d-md-table-cell">Action</th>
+                            <th class="">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,13 +56,13 @@
                         @foreach($datas as $key => $data)
                         <tr>
                             <td>{{$key + 1}}</td>
-                            <td class="d-none d-xl-table-cell">
+                            <td class="">
                                 <img src="product/{{$data->image}}" alt="{{$data->title}}" style="height:60px; width:60px; object-fit:cover;">
                             </td>
-                            <td class="d-none d-xl-table-cell">{{$data->product_title}}</td>
+                            <td class="">{{$data->product_title}}</td>
                             <td><span class="badge bg-success p-2 text-light">{{$data->quantity}}</span></td>
-                            <td class="d-none d-md-table-cell">${{$data->price}}</td>
-                            <td class="d-none d-md-table-cell">
+                            <td class="">${{$data->price}}</td>
+                            <td class="">
                                 <a href="{{url('remove_cart', $data->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to remove this product...?')">Remove</a>
                             </td>
                         </tr>

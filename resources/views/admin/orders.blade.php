@@ -34,7 +34,7 @@
                     <h1 class="h3 mb-3 text-center"><strong>All Orders</strong></h1>
 
                     <div class="col-12 d-flex">
-                        <div class="card flex-fill">
+                        <div class="card flex-fill" style="overflow-x: auto;">
                             <div class="card-header">
 
                                 <h5 class="card-title mb-0">Orders</h5>
@@ -44,12 +44,13 @@
                                     <tr>
                                         <th>S/N</th>
                                         <th>Image</th>
-                                        <th>name</th>
-                                        <th class="d-none d-xl-table-cell">Product Title</th>
-                                        <th class="d-none d-xl-table-cell">Quantity</th>
-                                        <th>Price</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
                                         <th>Phone</th>
                                         <th>Address</th>
+                                        <th class="">Product Title</th>
+                                        <th class="">Quantity</th>
+                                        <th>Price</th>
                                         <th>Payment Status</th>
                                         <th>Delivery Status</th>
                                     </tr>
@@ -59,22 +60,22 @@
                                     @foreach($orders as $key => $order)
                                     <tr>
                                         <td>{{$key + 1}}</td>
-                                        <td class="d-none d-xl-table-cell">
+                                        <td class="">
                                             <img src="product/{{$order->image}}" alt="{{$order->title}}"  style="height:60px; width:60px; object-fit:cover;">
                                         </td>
-                                        <td class="d-none d-xl-table-cell">{{$order->name}}</td>
-                                        <td class="d-none d-xl-table-cell">{{$order->product_title}}</td>
+                                        <td class="d-xl-table-cell">{{$order->name}}</td>
+                                        <td class="">{{$order->email}}</td>
+                                        <td class="">{{$order->phone}}</td>
+                                        <td class="">{{$order->address}}</td>
+                                        <td class="">{{$order->product_title}}</td>
                                         <td><span class="badge bg-success">{{$order->quantity}}</span></td>
-                                        <td class="d-none d-md-table-cell">{{$order->price}}</td>
-                                        <td class="d-none d-md-table-cell">{{$order->phone}}</td>
-                                        <td class="d-none d-md-table-cell">{{$order->address}}</td>
-                                        
-                                        <td class="d-none d-md-table-cell">
+                                        <td class="">{{$order->price}}</td>
+                                        <td class="">
                                             <a href="#" class="btn btn-danger" onclick="return confirm('Do you want to delete this..?')">{{$order->payment_status}}</a>
                                         
                                         </td>
                                         
-                                        <td class="d-none d-md-table-cell">
+                                        <td class="">
                                             <a href="#" class="btn btn-info" onclick="return confirm('Do you want to delete this..?')">{{$order->delivery_status}}</a>
                                         </td>
 

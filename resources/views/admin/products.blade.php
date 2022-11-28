@@ -36,7 +36,7 @@
                     <h1 class="h3 mb-3 text-center"><strong>All Products</strong></h1>
 
                     <div class="col-12 d-flex">
-                        <div class="card flex-fill">
+                        <div class="card flex-fill" style="overflow-x: auto;">
                             <div class="card-header">
 
                                 <h5 class="card-title mb-0">Products</h5>
@@ -47,10 +47,10 @@
                                         <th>S/N</th>
                                         <th>Image</th>
                                         <th>Title</th>
-                                        <th class="d-none d-xl-table-cell">Category</th>
-                                        <th class="d-none d-xl-table-cell">Quantity</th>
+                                        <th class="">Category</th>
+                                        <th class="">Quantity</th>
                                         <th>Price</th>
-                                        <th class="d-none d-md-table-cell">Discount Price</th>
+                                        <th class="">Discount Price</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -59,15 +59,15 @@
                                     @foreach($products as $key => $product)
                                     <tr>
                                         <td>{{$key + 1}}</td>
-                                        <td class="d-none d-xl-table-cell">
+                                        <td class="">
                                             <img src="product/{{$product->image}}" alt="{{$product->title}}"  style="height:60px; width:60px; object-fit:cover;">
                                         </td>
-                                        <td class="d-none d-xl-table-cell">{{$product->title}}</td>
-                                        <td class="d-none d-xl-table-cell">{{$product->category}}</td>
+                                        <td class="">{{$product->title}}</td>
+                                        <td class="">{{$product->category}}</td>
                                         <td><span class="badge bg-success">{{$product->quantity}}</span></td>
-                                        <td class="d-none d-md-table-cell">{{$product->price}}</td>
-                                        <td class="d-none d-md-table-cell">{{$product->discount_price}}</td>
-                                        <td class="d-none d-md-table-cell">
+                                        <td class="">{{$product->price}}</td>
+                                        <td class="">{{$product->discount_price}}</td>
+                                        <td class="">
                                             <a href="{{url('update_product', $product->id)}}" class="btn btn-info">Edit</a>
 
                                             <a href="{{url('delete_product', $product->id)}}" class="btn btn-danger" onclick="return confirm('Do you want to delete this..?')">Delete</a>
