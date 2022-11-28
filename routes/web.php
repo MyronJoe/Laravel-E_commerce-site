@@ -33,7 +33,6 @@ Route::get('/redirect', [HomeController::class, 'redirect']);
 
 Route::get('/admin_view', [AdminController::class, 'admin_view']);
 
-
 Route::get('/view_category', [AdminController::class, 'view_category']);
 
 Route::get('/add_category', [AdminController::class, 'add_category']);
@@ -41,8 +40,6 @@ Route::get('/add_category', [AdminController::class, 'add_category']);
 Route::post('/add_categories', [AdminController::class, 'add_categories']);
 
 Route::get('/delete_category/{id}', [AdminController::class, 'delete_category']);
-
-
 
 Route::get('/view_product', [AdminController::class, 'view_product']);
 
@@ -55,6 +52,13 @@ Route::get('/delete_product/{id}', [AdminController::class, 'delete_product']);
 Route::get('/update_product/{id}', [AdminController::class, 'update_product']);
 
 Route::post('/updateAllProducts/{id}', [AdminController::class, 'updateAllProducts']);
+
+Route::get('/view_orders', [AdminController::class, 'view_orders']);
+
+Route::get('/deliverd/{id}', [AdminController::class, 'deliverd']);
+
+
+
 
 Route::get('/product_detail/{id}', [HomeController::class, 'product_detail']);
 
@@ -69,5 +73,3 @@ Route::get('/cash_order', [HomeController::class, 'cash_order']);
 Route::get('/stripe/{totalPrice}', [HomeController::class, 'stripe']);
 
 Route::post('/stripe/{totalPrice}', [HomeController::class, 'stripePost'])->name('stripe.post');
-
-Route::get('/view_orders', [AdminController::class, 'view_orders']);

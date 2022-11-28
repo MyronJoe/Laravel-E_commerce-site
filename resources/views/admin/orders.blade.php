@@ -53,6 +53,7 @@
                                         <th>Price</th>
                                         <th>Payment Status</th>
                                         <th>Delivery Status</th>
+                                        <th>Delivered</th>
                                     </tr>
                                 </thead>
 
@@ -70,15 +71,40 @@
                                         <td class="">{{$order->product_title}}</td>
                                         <td><span class="badge bg-success">{{$order->quantity}}</span></td>
                                         <td class="">{{$order->price}}</td>
-                                        <td class="">
-                                            <a href="#" class="btn btn-danger" onclick="return confirm('Do you want to delete this..?')">{{$order->payment_status}}</a>
                                         
-                                        </td>
-                                        
-                                        <td class="">
-                                            <a href="#" class="btn btn-info" onclick="return confirm('Do you want to delete this..?')">{{$order->delivery_status}}</a>
-                                        </td>
+                                        @if($order->delivery_status == 'Delivered')
+                                            <td class="">
+                                                <a href="#" class="btn btn-success">{{$order->payment_status}}</a>
+                                            
+                                            </td>
+                                        @else
+                                            <td class="">
+                                                <a href="#" class="btn btn-info">{{$order->payment_status}}</a>
+                                            
+                                            </td>
+                                        @endif
 
+                                        @if($order->delivery_status == 'Delivered')
+                                            <td class="">
+                                                <a href="#" class="btn btn-primary">{{$order->delivery_status}}</a>
+                                            </td>
+                                        @else
+                                            <td class="">
+                                                <a href="#" class="btn btn-danger">{{$order->delivery_status}}</a>
+                                            </td>
+                                        @endif
+
+                                        @if($order->delivery_status == 'Delivered')
+                                            <td class="">
+                                                <a>Delivered</a>
+                                            </td>
+                                        @else
+                                            <td class="">
+                                                <a onclick="return confirm('Are you sure you want to change the delivery status...?')" class="btn btn-warning" href="{{url('deliverd', $order->id)}}">Deliver</a>
+                                            </td>
+                                        @endif
+                                        
+                                    
                                     </tr>
                                     @endforeach
                                 </tbody>
