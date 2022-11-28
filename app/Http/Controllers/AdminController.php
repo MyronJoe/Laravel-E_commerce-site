@@ -12,6 +12,8 @@ use App\Models\product;
 
 use Illuminate\Support\Facades\Auth;
 
+use PDF;
+
 use App\Models\User;
 
 class AdminController extends Controller
@@ -198,9 +200,13 @@ class AdminController extends Controller
     //print pdf function
     public function print_pdf($id){
 
-        // $order = order::find($id);
+        $order = order::find($id);
 
-        return view('admin.pdf');
+        $pdf = PDF::loadView('admin.pdf', compact('order'));
+
+        return $pdf->download('order_details.pdf');
+
+        // return view('admin.pdf', compact('order'));
 
     }
 
