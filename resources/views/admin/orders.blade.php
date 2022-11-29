@@ -33,6 +33,13 @@
 
                     <h1 class="h3 mb-3 text-center"><strong>All Orders</strong></h1>
 
+                    <form action="" method="POST" enctype="multipart/form-data" class="d-flex pb-3">
+                        @csrf
+                        <input type="text" class="form-control" name="search" placeholder="Search item" required>
+                     
+                        <input style="background-color: navy; color:white" type="submit" class="btn btn-primary " value="Search">
+                    </form>
+
                     <div class="col-12 d-flex">
                         <div class="card flex-fill" style="overflow-x: auto;">
                             <div class="card-header">
@@ -64,7 +71,7 @@
                                     <tr>
                                         <td>{{$key + 1}}</td>
                                         <td class="">
-                                            <img src="product/{{$order->image}}" alt="{{$order->title}}"  style="height:60px; width:60px; object-fit:cover;">
+                                            <img src="product/{{$order->image}}" alt="{{$order->title}}" style="height:60px; width:60px; object-fit:cover;">
                                         </td>
                                         <td class="d-xl-table-cell">{{$order->name}}</td>
                                         <td class="">{{$order->email}}</td>
@@ -73,39 +80,39 @@
                                         <td class="">{{$order->product_title}}</td>
                                         <td><span class="badge bg-success">{{$order->quantity}}</span></td>
                                         <td class="">{{$order->price}}</td>
-                                        
+
                                         @if($order->delivery_status == 'Delivered')
-                                            <td class="">
-                                                <a href="#" class="btn btn-success">{{$order->payment_status}}</a>
-                                            
-                                            </td>
+                                        <td class="">
+                                            <a href="#" class="btn btn-success">{{$order->payment_status}}</a>
+
+                                        </td>
                                         @else
-                                            <td class="">
-                                                <a href="#" class="btn btn-info">{{$order->payment_status}}</a>
-                                            
-                                            </td>
+                                        <td class="">
+                                            <a href="#" class="btn btn-info">{{$order->payment_status}}</a>
+
+                                        </td>
                                         @endif
 
                                         @if($order->delivery_status == 'Delivered')
-                                            <td class="">
-                                                <a href="#" class="btn btn-primary">{{$order->delivery_status}}</a>
-                                            </td>
+                                        <td class="">
+                                            <a href="#" class="btn btn-primary">{{$order->delivery_status}}</a>
+                                        </td>
                                         @else
-                                            <td class="">
-                                                <a href="#" class="btn btn-danger">{{$order->delivery_status}}</a>
-                                            </td>
+                                        <td class="">
+                                            <a href="#" class="btn btn-danger">{{$order->delivery_status}}</a>
+                                        </td>
                                         @endif
 
                                         @if($order->delivery_status == 'Delivered')
-                                            <td class="">
-                                                <a>Delivered</a>
-                                            </td>
+                                        <td class="">
+                                            <a>Delivered</a>
+                                        </td>
                                         @else
-                                            <td class="">
-                                                <a onclick="return confirm('Are you sure you want to change the delivery status...?')" class="btn btn-warning" href="{{url('deliverd', $order->id)}}">Deliver</a>
-                                            </td>
+                                        <td class="">
+                                            <a onclick="return confirm('Are you sure you want to change the delivery status...?')" class="btn btn-warning" href="{{url('deliverd', $order->id)}}">Deliver</a>
+                                        </td>
                                         @endif
-                                        
+
                                         <td class="">
                                             <a onclick="return confirm('Do you want to print PDF...?')" class="btn btn-secondary" href="{{url('print_pdf', $order->id)}}">Print</a>
                                         </td>
@@ -113,7 +120,7 @@
                                         <td class="">
                                             <a onclick="return confirm('Do you want to Send Mail...?')" class="btn btn-secondary" href="{{url('send_mail', $order->id)}}">Mail</a>
                                         </td>
-                                    
+
                                     </tr>
                                     @endforeach
                                 </tbody>
