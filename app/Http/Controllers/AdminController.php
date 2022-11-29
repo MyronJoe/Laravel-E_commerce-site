@@ -235,17 +235,19 @@ class AdminController extends Controller
 
         $details = [
 
-            'greetings'=>$request->greetings,
+            'greeting'=>$request->greeting,
             'firstline'=>$request->firstline,
             'content'=>$request->content,
             'button'=>$request->button,
             'url'=>$request->url,
             'lastline'=>$request->lastline,
 
-
         ];
 
         Notification::send($order, new SendEmailNotification($details));
+
+
+        return redirect('view_orders')->with('message', 'Mail sent successfully');
     }
 
     
