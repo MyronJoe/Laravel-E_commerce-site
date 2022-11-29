@@ -33,9 +33,9 @@
 
                     <h1 class="h3 mb-3 text-center"><strong>All Orders</strong></h1>
 
-                    <form action="" method="POST" enctype="multipart/form-data" class="d-flex pb-3">
+                    <form action="{{url('search')}}" method="GET" class="d-flex pb-3">
                         @csrf
-                        <input type="text" class="form-control" name="search" placeholder="Search item" required>
+                        <input type="text" class="form-control" name="search" placeholder="Search item">
                      
                         <input style="background-color: navy; color:white" type="submit" class="btn btn-primary " value="Search">
                     </form>
@@ -44,7 +44,12 @@
                         <div class="card flex-fill" style="overflow-x: auto;">
                             <div class="card-header">
 
-                                <h5 class="card-title mb-0">Orders</h5>
+                                
+                                @if($searchedWord != null)
+                                    <h5 class="card-title mb-0">You searched for {{$searchedWord}}</h5>
+                                @else
+                                    <h5 class="card-title mb-0">Orders</h5>
+                                @endif
                             </div>
                             <table class="table table-hover my-0">
                                 <thead>
@@ -67,7 +72,7 @@
                                 </thead>
 
                                 <tbody>
-                                    @foreach($orders as $key => $order)
+                                    @forelse($orders as $key => $order)
                                     <tr>
                                         <td>{{$key + 1}}</td>
                                         <td class="">
@@ -122,7 +127,14 @@
                                         </td>
 
                                     </tr>
-                                    @endforeach
+
+                                    @empty
+
+                                    <tr>
+                                        <td colspan="7"><h1>No data found</h1></td>
+                                    </tr>
+
+                                    @endforelse
                                 </tbody>
 
                             </table>

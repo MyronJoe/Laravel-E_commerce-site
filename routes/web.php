@@ -63,6 +63,8 @@ Route::get('/send_mail/{id}', [AdminController::class, 'send_mail']);
 
 Route::post('/send_user_email/{id}', [AdminController::class, 'send_user_email']);
 
+Route::get('/search', [AdminController::class, 'search']);
+
 
 
 

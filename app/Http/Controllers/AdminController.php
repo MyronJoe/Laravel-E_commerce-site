@@ -182,8 +182,9 @@ class AdminController extends Controller
 
         $orders = order::all();
 
+        $searchedWord = '';
 
-        return view('admin.orders', compact('orders'));
+        return view('admin.orders', compact('orders', 'searchedWord'));
     }
 
 
@@ -248,6 +249,15 @@ class AdminController extends Controller
 
 
         return redirect('view_orders')->with('message', 'Mail sent successfully');
+    }
+
+    public function search(Request $request){
+
+        $searchedWord = $request->search;
+
+        $orders = order::where('name', 'LIKE', "%$searchedWord%")->orWhere('product_title', 'LIKE', "%$searchedWord%")->orWhere('phone', 'LIKE', "%$searchedWord%")->get();
+
+        return view('admin.orders', compact('orders', 'searchedWord'));
     }
 
     
