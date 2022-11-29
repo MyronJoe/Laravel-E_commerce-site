@@ -59,6 +59,8 @@ Route::get('/deliverd/{id}', [AdminController::class, 'deliverd']);
 
 Route::get('/print_pdf/{id}', [AdminController::class, 'print_pdf']);
 
+Route::get('/send_mail/{id}', [AdminController::class, 'send_mail']);
+
 
 
 

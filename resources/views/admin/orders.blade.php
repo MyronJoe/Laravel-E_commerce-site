@@ -55,6 +55,7 @@
                                         <th>Delivery Status</th>
                                         <th>Delivered</th>
                                         <th>Print PDF</th>
+                                        <th>Send Mail</th>
                                     </tr>
                                 </thead>
 
@@ -107,6 +108,10 @@
                                         
                                         <td class="">
                                             <a onclick="return confirm('Do you want to print PDF...?')" class="btn btn-secondary" href="{{url('print_pdf', $order->id)}}">Print</a>
+                                        </td>
+
+                                        <td class="">
+                                            <a onclick="return confirm('Do you want to Send Mail...?')" class="btn btn-secondary" href="{{url('send_mail', $order->id)}}">Mail</a>
                                         </td>
                                     
                                     </tr>

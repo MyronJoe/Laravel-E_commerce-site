@@ -210,6 +210,17 @@ class AdminController extends Controller
 
     }
 
+
+
+    //send email notification
+    public function send_mail($id){
+
+        $order=order::find($id);
+
+        return view('admin.mailer');
+
+    }
+
     
 
 }
