@@ -42,7 +42,12 @@
 
                             <div class="mt-3 form-group">
                                 <label for="">Greeting</label>
-                                <input type="text" class="form-control" name="title" placeholder="Greeting" required>
+                                <input type="text" class="form-control" name="greeting" placeholder="Greeting" required>
+                            </div>
+
+                            <div class="mt-3 form-group">
+                                <label for="">First Line</label>
+                                <input type="text" name="firstline" class="form-control" placeholder="First Line" required>
                             </div>
 
                             <div class="mt-3 form-group">
@@ -50,32 +55,22 @@
                                 <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required placeholder="Enter email content"></textarea>
                             </div>
 
-                        
-
                             <div class="mt-3 form-group">
-                                <label for="">Price</label>
-                                <input type="number" name="price" class="form-control" placeholder="Price" required>
+                                <label for="">Button</label>
+                                <input type="text" name="button" class="form-control" placeholder="Button Value" required>
                             </div>
 
                             <div class="mt-3 form-group">
-                                <label for="">Discount Price</label>
-                                <input type="number" name="dis_price" class="form-control" placeholder="Discount Price">
+                                <label for="">Url</label>
+                                <input type="text" name="url" class="form-control" placeholder="url" required>
                             </div>
 
                             <div class="mt-3 form-group">
-                                <label for="">Product Quantity</label>
-                                <input type="number" name="quantity" min="0" class="form-control" placeholder="Product Quantity" required>
+                                <label for="">Last Line</label>
+                                <input type="text" name="lastline" class="form-control" placeholder="Last Line" required>
                             </div>
 
-                            <div class="mt-3 form-group">
-                                <label for="exampleFormControlFile1">Product Image</label><br>
-                                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1" required>
-                            </div>
-
-
-                            <!-- <button type="submit" class="btn btn-primary mb-2">Submit</button> -->
-
-                            <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-4" value="Add Product">
+                            <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-4" value="Send Mail">
                         </form>
 
 
