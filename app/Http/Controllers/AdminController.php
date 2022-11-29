@@ -16,6 +16,12 @@ use PDF;
 
 use App\Models\User;
 
+use App\Notifications\SendEmailNotification;
+
+// use Illuminate\Notifications\Notification;
+
+use Notification;
+
 class AdminController extends Controller
 {
     //admin homepage route
@@ -219,6 +225,27 @@ class AdminController extends Controller
 
         return view('admin.mailer', compact('order'));
 
+    }
+
+
+    //send email to user
+    public function send_user_email(Request $request, $id){
+
+        $order = order::find($id);
+
+        $details = [
+
+            'greetings'=>$request->greetings,
+            'firstline'=>$request->firstline,
+            'content'=>$request->content,
+            'button'=>$request->button,
+            'url'=>$request->url,
+            'lastline'=>$request->lastline,
+
+
+        ];
+
+        Notification::send($order, new SendEmailNotification($details));
     }
 
     

@@ -61,6 +61,8 @@ Route::get('/print_pdf/{id}', [AdminController::class, 'print_pdf']);
 
 Route::get('/send_mail/{id}', [AdminController::class, 'send_mail']);
 
+Route::post('/send_user_email/{id}', [AdminController::class, 'send_user_email']);
+
 
 
 

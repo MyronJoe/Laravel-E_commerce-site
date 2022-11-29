@@ -36,7 +36,7 @@
 
                     <div class="col-12 ">
 
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="{{url('send_user_email', $order->id)}}" method="POST" enctype="multipart/form-data">
 
                             @csrf
 
@@ -52,7 +52,7 @@
 
                             <div class="mt-3 form-group">
                                 <label for="exampleFormControlTextarea1">Mail Content</label>
-                                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required placeholder="Enter email content"></textarea>
+                                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3" required placeholder="Enter email content"></textarea>
                             </div>
 
                             <div class="mt-3 form-group">
