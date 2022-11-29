@@ -217,7 +217,7 @@ class AdminController extends Controller
 
         $order=order::find($id);
 
-        return view('admin.mailer');
+        return view('admin.mailer', compact('order'));
 
     }
 
