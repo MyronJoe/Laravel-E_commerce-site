@@ -33,7 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('view_cart') }}">
                             <span class="fa fa-shopping-cart"></span>
-                            <span class="badge badge-danger">0</span>
+                            @if(Auth::id() != null)
+                                <span class="badge badge-danger">0</span>
+                            @endif
                         </a>
                     </li>
                     <form class="form-inline">
