@@ -266,6 +266,10 @@ class HomeController extends Controller
 
     }
 
+    public function cancel_order($id){
+        
+    }
+
 
 
 
