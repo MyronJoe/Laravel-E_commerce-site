@@ -40,9 +40,11 @@ class HomeController extends Controller
 
             $odersDeliverd = order::where('delivery_status', '=', 'Delivered')->count();
 
+            $odersNotDeliverd = order::where('delivery_status', '=', 'Processing')->count();
 
 
-            return view('admin.home', compact('allProducts', 'allUsers', 'allorders', 'totalIncome', 'odersDeliverd'));
+
+            return view('admin.home', compact('allProducts', 'allUsers', 'allorders', 'totalIncome', 'odersDeliverd', 'odersNotDeliverd'));
 
         } else {
             $products = product::paginate(6);
