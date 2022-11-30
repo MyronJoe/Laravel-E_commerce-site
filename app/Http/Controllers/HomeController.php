@@ -250,9 +250,15 @@ class HomeController extends Controller
     public function view_order(){
 
         if (Auth::id()) {
+
+            $user = Auth::user();
+
+            $id = $user->id;
             
-            return view('home.order');
+            $order = order::where('user_id', '=', $id)->get();
             
+            return view('home.order', compact('order'));
+
         }else{
             return redirect('login');
         }

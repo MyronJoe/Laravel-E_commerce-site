@@ -23,7 +23,7 @@
         @include('home.header')
         <!-- end header section -->
 
-        
+        <!-- <h1>{{$order->email}}</h1> -->
     </div>
     
     <div class="cpy_">
