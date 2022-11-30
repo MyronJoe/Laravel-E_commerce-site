@@ -105,7 +105,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h1 class="mt-1 mb-3">64</h1>
+                                <h1 class="mt-1 mb-3">{{$odersDeliverd}}</h1>
                             </div>
                         </div>
                     </div>
