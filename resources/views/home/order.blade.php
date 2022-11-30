@@ -13,7 +13,7 @@
     <meta name="author" content="" />
     <link rel="shortcut icon" href="home/images/favicon.png" type="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Myron Stores</title>
+    <title>Myron Stores - orders</title>
     @include('home.css')
 </head>
 
@@ -22,31 +22,10 @@
         <!-- header section strats -->
         @include('home.header')
         <!-- end header section -->
-        <!-- slider section -->
-        @include('home.slider')
-        <!-- end slider section -->
+
+        
     </div>
-    <!-- why section -->
-    @include('home.why')
-    <!-- end why section -->
-
-    <!-- arrival section -->
-    @include('home.new_arrival')
-    <!-- end arrival section -->
-
-    <!-- product section -->
-    @include('home.product')
-    <!-- end product section -->
-
-    <!-- subscribe section -->
-    @include('home.subscribe')
-    <!-- end subscribe section -->
-    <!-- client section -->
-    @include('home.client')
-    <!-- end client section -->
-    <!-- footer start -->
-    @include('home.footer')
-    <!-- footer end -->
+    
     <div class="cpy_">
         <p class="mx-auto">© 2021 All Rights Reserved By Myron Stores
 
