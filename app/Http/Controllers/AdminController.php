@@ -47,12 +47,12 @@ class AdminController extends Controller
                     $totalIncome += $order->price;
                 }
 
-                $odersDeliverd = order::where('delivery_status', '=', 'Delivered')->count();
+                $odersDeliverd = order::where('delivery_status', '=', 'Delivered')->get()->count();
 
-                $odersNotDeliverd = order::where('delivery_status', '=', 'Processing')->count();
+                $odersNotDeliverd = order::where('delivery_status', '=', 'Processing')->get()->count();
 
                 return view('admin.home', compact('allProducts', 'allUsers', 'allorders', 'totalIncome', 'odersDeliverd', 'odersNotDeliverd'));
-                
+
             }else{
                 return redirect('/');
             }
