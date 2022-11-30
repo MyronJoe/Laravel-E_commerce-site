@@ -30,7 +30,7 @@
             <div class="card flex-fill" style="overflow-x: auto;">
                 <div class="card-header">
 
-                    <h5 class="card-title mb-0">Orders By {{Auth::user()->name}}</h5>
+                    <h5 class="card-title mb-0">Orders By {{Auth::user()->name}}: <span class="badge badge-danger">{{$orderNum}}</span></h5>
 
                 </div>
                 <table class="table table-hover my-0">
@@ -38,13 +38,11 @@
                         <tr>
                             <th>S/N</th>
                             <th>Image</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Address</th>
                             <th class="">Product Title</th>
-                            <th class="">Quantity</th>
                             <th>Price</th>
+                            <th class="">Quantity</th>
+                            <th class="">Payment Status</th>
+                            <th class="">Delivery Status</th>
                             <th>Cancel</th>
                         </tr>
                     </thead>
@@ -56,18 +54,22 @@
                             <td class="">
                                 <img src="product/{{$order->image}}" alt="{{$order->title}}" style="height:60px; width:60px; object-fit:cover;">
                             </td>
-                            <td class="d-xl-table-cell">{{$order->name}}</td>
-                            <td class="">{{$order->email}}</td>
-                            <td class="">{{$order->phone}}</td>
-                            <td class="">{{$order->address}}</td>
                             <td class="">{{$order->product_title}}</td>
-                            <td><span class="badge bg-success">{{$order->quantity}}</span></td>
                             <td class="">{{$order->price}}</td>
+                            <td><span class="badge bg-success">{{$order->quantity}}</span></td>
+                            <td class="">{{$order->payment_status}}</td>
+                            <td class="">{{$order->delivery_status}}</td>
 
-
+                            @if($order->delivery_status != 'Processing')
                             <td class="">
-                                <a onclick="return confirm('Do you want to cancel this order...?')" class="btn btn-danger" href="{{url('cancel_order', $order->id)}}">Cancel</a>
+                                <a href="#">Not Allowed</a>
                             </td>
+                            @else
+                                <td class="">
+                                    <a onclick="return confirm('Do you want to cancel this order...?')" class="btn btn-danger" href="{{url('cancel_order', $order->id)}}">Cancel</a>
+                                </td>
+                            @endif
+                            
 
                         </tr>
 

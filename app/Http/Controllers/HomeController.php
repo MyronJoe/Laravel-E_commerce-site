@@ -256,8 +256,10 @@ class HomeController extends Controller
             $id = $user->id;
             
             $order = order::where('user_id', '=', $id)->get();
+
+            $orderNum = order::where('user_id', '=', $id)->get()->count();
             
-            return view('home.order', compact('order'));
+            return view('home.order', compact('order', 'orderNum'));
 
         }else{
             return redirect('login');
@@ -267,7 +269,17 @@ class HomeController extends Controller
     }
 
     public function cancel_order($id){
-        
+
+        $order = order::find($id);
+
+        $order->delivery_status = 'Canceled';
+
+        // $order->delete();
+
+        $order->save();
+
+        return redirect('/view_order')->with('message', 'Your order was canceled');;
+
     }
 
 
