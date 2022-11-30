@@ -23,9 +23,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="blog_list.html">Blog</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="{{ url('view_cart') }}">Cart</a>
-                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('view_order') }}">Order</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('admin_view') }}">Dashboard</a>
                     </li>
