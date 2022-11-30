@@ -35,7 +35,24 @@ class AdminController extends Controller
 
             if ($usertype == '1') {
 
-                return view('admin.home');
+                $allProducts = product::all()->count();
+
+                $allUsers = User::all()->count();
+
+                $allorders = order::all()->count();
+
+                $order = order::all();
+                $totalIncome = '0';
+                foreach ($order as $order) {
+                    $totalIncome += $order->price;
+                }
+
+                $odersDeliverd = order::where('delivery_status', '=', 'Delivered')->count();
+
+                $odersNotDeliverd = order::where('delivery_status', '=', 'Processing')->count();
+
+                return view('admin.home', compact('allProducts', 'allUsers', 'allorders', 'totalIncome', 'odersDeliverd', 'odersNotDeliverd'));
+                
             }else{
                 return redirect('/');
             }

@@ -51,7 +51,7 @@
 
                                     <div class="col-auto">
                                         <div class="stat text-primary">
-                                            <i class="align-middle" data-feather="users"></i>
+                                            <i class="align-middle" data-feather="phone"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h1 class="mt-1 mb-3">64</h1>
+                                <h1 class="mt-1 mb-3">{{$odersNotDeliverd}}</h1>
                             </div>
                         </div>
                         <div class="card">
