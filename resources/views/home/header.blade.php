@@ -1,7 +1,9 @@
 <header class="header_section">
     <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="{{ url('/') }}" ><h2 style="font-size: 30px; font-family:'Trebuchet MS';"><span>Myron</span><span style="background: purple; color:white; padding:0 .2em; border-radius:4px; ">Stores</span></h2></a>
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <h2 style="font-size: 30px; font-family:'Trebuchet MS';"><span>Myron</span><span style="background: purple; color:white; padding:0 .2em; border-radius:4px; ">Stores</span></h2>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class=""> </span>
             </button>
@@ -34,7 +36,7 @@
                         <a class="nav-link" href="{{ url('view_cart') }}">
                             <span class="fa fa-shopping-cart"></span>
                             @if(Auth::id() != null)
-                                <span class="badge badge-danger">0</span>
+                            <span class="badge badge-danger">0</span>
                             @endif
                         </a>
                     </li>
