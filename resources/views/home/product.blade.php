@@ -13,15 +13,15 @@
                         <p class="bg-danger px-3 py-1 text-light">category: {{$product->category}}</p>
 
                         @if($product->discount_price != null)
-                            <h6 class="bg-danger px-3 py-1 text-light mt-1">
-                                Price:
-                                <span style="text-decoration: line-through;">${{$product->price}}</span>
-                            </h6>
+                        <h6 class="bg-danger px-3 py-1 text-light mt-1">
+                            Price:
+                            <span style="text-decoration: line-through;">${{$product->price}}</span>
+                        </h6>
                         @else
-                            <h6 class="bg-danger px-3 py-1 text-light mt-1">
-                                Price:
-                                <span>${{$product->price}}</span>
-                            </h6>
+                        <h6 class="bg-danger px-3 py-1 text-light mt-1">
+                            Price:
+                            <span>${{$product->price}}</span>
+                        </h6>
                         @endif
                     </div>
                     <div class="option_container">
@@ -34,7 +34,7 @@
                             <form action="{{url('add_cart', $product->id)}}" method="POST">
 
                                 @csrf
-                                
+
                                 <input type="number" style="width: 60px; margin-left:50px" min="1" name="quantity" value="1">
 
                                 <input type="submit" value="Add to cart" style="border-radius: 60px;">
@@ -57,19 +57,19 @@
                             ${{$product->discount_price}}
                         </h6>
                         @else
-                            <h6>
+                        <h6>
                             Price:
                             ${{$product->price}}
-                            </h6>
+                        </h6>
                         @endif
                     </div>
                 </div>
             </div>
             @endforeach
 
-            
-        <div class="mt-3 text-center" style="width: 300px; margin:auto;">
-            {!!$products->withQueryString()->links('pagination::bootstrap-5')!!}
+
+            <div class="mt-3 text-center" style="width: 300px; margin:auto;">
+                {!!$products->withQueryString()->links('pagination::bootstrap-5')!!}
+            </div>
         </div>
-    </div>
 </section>
