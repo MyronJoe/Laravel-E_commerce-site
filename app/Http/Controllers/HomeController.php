@@ -55,6 +55,7 @@ class HomeController extends Controller
 
     }
 
+    
     public function index(){
 
         $products = product::paginate(6);
@@ -285,11 +286,11 @@ class HomeController extends Controller
     //product page
     public function product(){
 
-        return view('home.product');
+        $products = product::paginate(6);
+
+        return view('home.all_product', compact('products'));
+
+        // dd($products);
     }
-
-
-
-
 
 }
