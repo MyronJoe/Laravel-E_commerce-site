@@ -81,31 +81,57 @@ class HomeController extends Controller
 
             $product = product::find($id);
             $user = Auth::user();
-            
 
-            $cart->name=$user->name;
-            $cart->email=$user->email;
-            $cart->phone=$user->phone;
-            $cart->address=$user->address;
-            $cart->user_id=$user->id;
+            $userid = $user->id;
+            $product_exist_id = cart::where('product_id', '=', $id)->where('user_id', '=', $userid)->get('id')->first();
 
-            $cart->product_title=$product->title;
+            if ($product_exist_id) {
+                
+                $cart = cart::find($product_exist_id)->first();
 
-            if ($product->discount_price != null) {
-                $cart->price=$product->discount_price * $request->quantity;
-            }else{
-                $cart->price=$product->price * $request->quantity;
+                $quantity = $cart->quantity;
+
+                $cart->quantity = $quantity + $request->quantity;
+
+                if ($product->discount_price != null) {
+                    $cart->price=$product->discount_price * $request->quantity;
+                }else{
+                    $cart->price=$product->price * $request->quantity;
+                }
+
+                $cart->save();
+
+                return redirect()->back();
             }
-
-            $cart->image=$product->image;
-            $cart->product_id=$product->id;
-
-            $cart->quantity=$request->quantity;
+            else{
 
 
-            $cart->save();
+            
+                $cart->name=$user->name;
+                $cart->email=$user->email;
+                $cart->phone=$user->phone;
+                $cart->address=$user->address;
+                $cart->user_id=$user->id;
 
-            return redirect()->back();
+                $cart->product_title=$product->title;
+
+                if ($product->discount_price != null) {
+                    $cart->price=$product->discount_price * $request->quantity;
+                }else{
+                    $cart->price=$product->price * $request->quantity;
+                }
+
+                $cart->image=$product->image;
+                $cart->product_id=$product->id;
+
+                $cart->quantity=$request->quantity;
+
+
+                $cart->save();
+
+                return redirect()->back();
+
+            }
 
         }else{
 
