@@ -282,6 +282,11 @@ class HomeController extends Controller
 
     }
 
+    //product page
+    public function product(){
+
+        return view('home.product');
+    }
 
 
 
