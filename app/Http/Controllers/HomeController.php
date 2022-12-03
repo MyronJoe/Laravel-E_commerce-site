@@ -286,7 +286,7 @@ class HomeController extends Controller
     //product page
     public function product(){
 
-        $products = product::paginate(6);
+        $products = product::paginate(9);
 
         return view('home.all_product', compact('products'));
 
