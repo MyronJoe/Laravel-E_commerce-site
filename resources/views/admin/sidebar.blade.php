@@ -33,7 +33,7 @@
                 </a>
             </li>
 
-            <li class="sidebar-item">
+            <!-- <li class="sidebar-item">
                 <a class="sidebar-link d-flex" href="pages-sign-up.html">
                     <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
                 </a>
@@ -70,7 +70,7 @@
                 <a class="sidebar-link d-flex" href="icons-feather.html">
                     <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
                 </a>
-            </li>
+            </li> -->
 
 
         </ul>

@@ -27,8 +27,6 @@ class AdminController extends Controller
     //admin homepage route
     public function admin_view(){
 
-        
-
         if (Auth::id()) {
 
             $usertype = Auth::user()->usertype;
@@ -68,16 +66,46 @@ class AdminController extends Controller
     //display all category funtion
     public function view_category(){
 
-        $data = category::all();
+        if (Auth::id()) {
 
-        return view('admin.category', compact('data'));
+            $usertype = Auth::user()->usertype;
+
+            if ($usertype == '1') {
+
+                $data = category::all();
+
+                return view('admin.category', compact('data'));
+
+            }
+            else{
+                return redirect('/');
+            }
+
+        }else{
+            return redirect('/');
+        }
     }
 
 
     //add category form
     public function add_category(Request $request){
 
-        return view('admin.add_category');
+        if (Auth::id()) {
+
+            $usertype = Auth::user()->usertype;
+
+            if ($usertype == '1') {
+
+                return view('admin.add_category');
+
+            }
+            else{
+                return redirect('/');
+            }
+
+        }else{
+            return redirect('/');
+        }
     }
 
     //add category funtion
@@ -91,26 +119,59 @@ class AdminController extends Controller
 
         return redirect('view_category')->with('message', 'Category was added successfully');
 
+        
+
     }
 
 
     //delete category function
     public function delete_category($id){
 
-        $data = category::find($id);
+        if (Auth::id()) {
 
-        $data->delete();
+            $usertype = Auth::user()->usertype;
 
-        return redirect('view_category')->with('message', 'Category was deleted successfully');
+            if ($usertype == '1') {
+
+                $data = category::find($id);
+
+                $data->delete();
+
+                return redirect('view_category')->with('message', 'Category was deleted successfully');
+
+            }
+            else{
+                return redirect('/');
+            }
+
+        }else{
+            return redirect('/');
+        }
     }
 
 
     //display product
     public function view_product(){
 
-        $products = product::all();
 
-        return view('admin.products', compact('products'));
+        if (Auth::id()) {
+
+            $usertype = Auth::user()->usertype;
+
+            if ($usertype == '1') {
+
+                $products = product::all();
+
+                return view('admin.products', compact('products'));
+
+            }
+            else{
+                return redirect('/');
+            }
+
+        }else{
+            return redirect('/');
+        }
     }
 
 
@@ -148,11 +209,26 @@ class AdminController extends Controller
     //delete product function
     public function delete_product($id){
 
-        $data = product::find($id);
+        if (Auth::id()) {
 
-        $data->delete();
+            $usertype = Auth::user()->usertype;
 
-        return redirect('view_product')->with('message', 'Product deleted successfully');
+            if ($usertype == '1') {
+
+                $data = product::find($id);
+
+                $data->delete();
+
+                return redirect('view_product')->with('message', 'Product deleted successfully');
+
+            }
+            else{
+                return redirect('/');
+            }
+
+        }else{
+            return redirect('/');
+        }
 
     }
 
@@ -197,11 +273,28 @@ class AdminController extends Controller
     //view all orders
     public function view_orders(){
 
-        $orders = order::all();
+        
 
-        $searchedWord = '';
+        if (Auth::id()) {
 
-        return view('admin.orders', compact('orders', 'searchedWord'));
+            $usertype = Auth::user()->usertype;
+
+            if ($usertype == '1') {
+
+                $orders = order::all();
+
+                $searchedWord = '';
+
+                return view('admin.orders', compact('orders', 'searchedWord'));
+
+            }
+            else{
+                return redirect('/');
+            }
+
+        }else{
+            return redirect('/');
+        }
     }
 
 

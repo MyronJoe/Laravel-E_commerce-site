@@ -47,21 +47,47 @@ class HomeController extends Controller
             return view('admin.home', compact('allProducts', 'allUsers', 'allorders', 'totalIncome', 'odersDeliverd', 'odersNotDeliverd'));
 
         } else {
-            $products = product::paginate(6);
 
-            return view('home.userpage', compact('products'));
+            //diplay product with cart count
+            if (Auth::id()) {
+                $id = Auth::user()->id;
+        
+                $counter = cart::where('user_id', '=', $id)->count();
+        
+                $products = product::paginate(6);
+        
+                return view('home.userpage', compact('products', 'counter'));
+            }else{
+                
+    
+                $products = product::paginate(6);
+    
+                return view('home.userpage', compact('products'));
+            }
         }
         
 
     }
 
-    
+    //diplay product with cart count
     public function index(){
 
-        $products = product::paginate(6);
         
+        if (Auth::id()) {
+            $id = Auth::user()->id;
+    
+            $counter = cart::where('user_id', '=', $id)->count();
+    
+            $products = product::paginate(6);
+    
+            return view('home.userpage', compact('products', 'counter'));
+        }else{
+            
 
-        return view('home.userpage', compact('products'));
+            $products = product::paginate(6);
+
+            return view('home.userpage', compact('products'));
+        }
     }
 
 
