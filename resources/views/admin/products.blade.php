@@ -60,7 +60,7 @@
                                     <tr>
                                         <td>{{$key + 1}}</td>
                                         <td class="">
-                                            <img src="product/{{$product->image}}" alt="{{$product->title}}"  style="height:60px; width:60px; object-fit:cover;">
+                                            <img src="product/{{$product->image}}" alt="{{$product->title}}" style="height:60px; width:60px; object-fit:cover;">
                                         </td>
                                         <td class="">{{$product->title}}</td>
                                         <td class="">{{$product->category}}</td>
