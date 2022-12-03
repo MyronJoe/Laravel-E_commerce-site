@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="admin/img/icons/icon-48x48.png" />
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
     <title>Myron-Ecommerce-Admin</title>
 
-    <link href="admin/css/app.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('admin/img/icons/icon-48x48.png') }}" />
+    <link href="{{ asset('admin/css/app.css') }}" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -60,7 +61,7 @@
                                     <tr>
                                         <td>{{$key + 1}}</td>
                                         <td class="">
-                                            <img src="product/{{$product->image}}" alt="{{$product->title}}" style="height:60px; width:60px; object-fit:cover;">
+                                            <img src="/product/{{$product->image}}" alt="{{$product->title}}" style="height:60px; width:60px; object-fit:cover;">
                                         </td>
                                         <td class="">{{$product->title}}</td>
                                         <td class="">{{$product->category}}</td>

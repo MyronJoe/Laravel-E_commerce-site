@@ -50,7 +50,7 @@
                         <a href="#" class="list-group-item">
                             <div class="row g-0 align-items-center">
                                 <div class="col-2">
-                                    <img src="admin/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+                                    <img src="/admin/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
                                 </div>
                                 <div class="col-10 ps-2">
                                     <div class="text-dark">Vanessa Tucker</div>
@@ -70,7 +70,7 @@
             <li class="nav-item dropdown mt-1">
 
                 <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                    <img src="admin/img/avatars/avatar.jpg" class="avatar img-fluid rounded" alt="Charles Hall" />
+                    <img src="/admin/img/avatars/avatar.jpg" class="avatar img-fluid rounded" alt="Charles Hall" />
                 </a>
                 
             </li>
