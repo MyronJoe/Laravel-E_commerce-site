@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <base href="/public">
@@ -36,7 +37,7 @@
 
                     <a style="float: right;" class="btn btn-primary mb-2" href="{{ url('view_product') }}">View Products</a>
 
-                    <h1 style="float: left;"  class="h3 mb-3 text-center"><strong>Update Product</strong></h1>
+                    <h1 style="float: left;" class="h3 mb-3 text-center"><strong>Update Product</strong></h1>
 
                     <div class="col-12 " style="clear:both;">
 
@@ -45,7 +46,7 @@
                             @csrf
 
                             <div class=" form-group">
-                                <img src="product/{{$data->image}}" alt="{{$data->title}}"  style="height:100px; width:100px; object-fit:cover;">
+                                <img src="product/{{$data->image}}" alt="{{$data->title}}" style="height:100px; width:100px; object-fit:cover;">
                             </div>
 
 
@@ -65,7 +66,7 @@
                                 <select class="form-control" name="category" id="exampleFormControlSelect1" required>
                                     <option value="{{$data->category}}" selected="">{{$data->category}}</option>
                                     @foreach($category as $category)
-                                        <option value="{{$category->category_name}}">{{$category->category_name}}</option>
+                                    <option value="{{$category->category_name}}">{{$category->category_name}}</option>
                                     @endforeach
                                 </select>
 
