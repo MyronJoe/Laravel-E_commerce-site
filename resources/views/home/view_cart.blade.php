@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <base href="/public">
     <!-- Basic -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +11,6 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="shortcut icon" href="home/images/favicon.png" type="">
     <title>Myron Stores</title>
     @include('home.css')
     <style>

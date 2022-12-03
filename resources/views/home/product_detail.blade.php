@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <base href="/public">
+
     <!-- Basic -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +12,6 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="shortcut icon" href="home/images/favicon.png" type="">
     <title>Myron Stores</title>
     @include('home.css')
     <style>
@@ -33,7 +32,7 @@
         <div class="row p-5">
             <div class="col-sm-12 col-md-6 p-5">
 
-                <img src="product/{{$product->image}}" alt="" style="width: 100%; height:270px; object-fit:cover;">
+                <img src="/product/{{$product->image}}" alt="" style="width: 100%; height:270px; object-fit:cover;">
 
             </div>
 
