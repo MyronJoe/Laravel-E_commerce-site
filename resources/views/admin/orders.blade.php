@@ -36,7 +36,7 @@
                     <form action="{{url('search')}}" method="GET" class="d-flex pb-3">
                         @csrf
                         <input type="text" class="form-control" name="search" placeholder="Search item">
-                     
+
                         <input style="background-color: navy; color:white" type="submit" class="btn btn-primary " value="Search">
                     </form>
 
@@ -44,11 +44,11 @@
                         <div class="card flex-fill" style="overflow-x: auto;">
                             <div class="card-header">
 
-                                
+
                                 @if($searchedWord != null)
-                                    <h5 class="card-title mb-0">You searched for {{$searchedWord}}</h5>
+                                <h5 class="card-title mb-0">You searched for {{$searchedWord}}</h5>
                                 @else
-                                    <h5 class="card-title mb-0">Orders</h5>
+                                <h5 class="card-title mb-0">Orders</h5>
                                 @endif
                             </div>
                             <table class="table table-hover my-0">
@@ -131,7 +131,9 @@
                                     @empty
 
                                     <tr>
-                                        <td colspan="7"><h1>No data found</h1></td>
+                                        <td colspan="7">
+                                            <h1>No data found</h1>
+                                        </td>
                                     </tr>
 
                                     @endforelse
