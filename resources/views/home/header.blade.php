@@ -71,4 +71,6 @@
         </nav>
     </div>
     @include('admin.successmsg')
+
+    @include('sweetalert::alert')
 </header>
