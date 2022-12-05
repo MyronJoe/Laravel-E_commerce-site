@@ -92,11 +92,19 @@
     </div>
     <script>
 
-        function confirmation(ev){
+function confirmation(ev){
 
-            ev.prevent
+ev.preventDefault()
+var UrlToRedirect = ev.currentTarget.getAttribute('href')
+swal({
+    title: "Are you sure to cancel this product",
+    text: "You will not be able to revert this!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+})
 
-        }
+}
 
 
 
