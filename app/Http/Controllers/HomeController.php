@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\cart;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 use App\Models\order;
 
 use Illuminate\Http\Request;
@@ -154,6 +156,8 @@ class HomeController extends Controller
 
 
                 $cart->save();
+
+                Alert::success('Product Added Successfully', 'Your product have been added to the cart');
 
                 return redirect()->back();
 
