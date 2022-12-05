@@ -92,28 +92,28 @@
     </div>
     <script>
 
-function confirmation(ev){
+        function confirmation(ev){
 
-ev.preventDefault()
-var UrlToRedirect = ev.currentTarget.getAttribute('href')
-swal({
-    title: "Are you sure to cancel this product",
-    text: "You will not be able to revert this!",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true,
-}).then((willCancel) => {
-    if(willCancel){
-        window.location.href = UrlToRedirect
-    }
-})
+        ev.preventDefault()
+        var UrlToRedirect = ev.currentTarget.getAttribute('href')
+        swal({
+            title: "Are you sure to cancel this product",
+            text: "You will not be able to revert this!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willCancel) => {
+            if(willCancel){
+                window.location.href = UrlToRedirect
+            }
+        })
 
-}
+        }
 
-
-
-
+        
     </script>
+
+
     <!-- jQery -->
     <script src="home/js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
