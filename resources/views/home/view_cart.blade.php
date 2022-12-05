@@ -61,7 +61,7 @@
                             <td><span class="badge bg-success p-2 text-light">{{$data->quantity}}</span></td>
                             <td class="">${{$data->price}}</td>
                             <td class="">
-                                <a href="{{url('remove_cart', $data->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to remove this product...?')">Remove</a>
+                                <a href="{{url('remove_cart', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Remove</a>
                             </td>
                         </tr>
 
@@ -90,6 +90,18 @@
 
         </p>
     </div>
+    <script>
+
+        function confirmation(){
+
+            
+
+        }
+
+
+
+
+    </script>
     <!-- jQery -->
     <script src="home/js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
