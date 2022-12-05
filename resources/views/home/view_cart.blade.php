@@ -92,9 +92,9 @@
     </div>
     <script>
 
-        function confirmation(){
+        function confirmation(ev){
 
-            
+            ev.prevent
 
         }
 
