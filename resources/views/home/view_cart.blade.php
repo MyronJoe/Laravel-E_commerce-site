@@ -102,6 +102,10 @@ swal({
     icon: "warning",
     buttons: true,
     dangerMode: true,
+}).then((willCancel) => {
+    if(willCancel){
+        window.location.href = UrlToRedirect
+    }
 })
 
 }
