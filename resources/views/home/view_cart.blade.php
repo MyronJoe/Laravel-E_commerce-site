@@ -90,6 +90,8 @@
 
         </p>
     </div>
+
+    <!-- Sweet alert function -->
     <script>
 
         function confirmation(ev){
@@ -109,7 +111,6 @@
         })
 
         }
-
         
     </script>
 
