@@ -24,8 +24,6 @@
                             <a href="{{url('product_detail', $product->id)}}" class="option1">
                                 Product Details
                             </a>
-
-
                             <form action="{{url('add_cart', $product->id)}}" method="POST">
 
                                 @csrf
@@ -35,7 +33,6 @@
                                 <input type="submit" value="Add to cart" style="border-radius: 60px;">
 
                             </form>
-
                         </div>
                     </div>
                     <div class="img-box">
