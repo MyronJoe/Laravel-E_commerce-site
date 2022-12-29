@@ -18,8 +18,6 @@ use App\Models\User;
 
 use App\Notifications\SendEmailNotification;
 
-// use Illuminate\Notifications\Notification;
-
 use Notification;
 
 class AdminController extends Controller
