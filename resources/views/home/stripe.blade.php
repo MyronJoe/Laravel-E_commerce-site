@@ -9,7 +9,6 @@
     
 <div class="container pt-3">
     
-    
     <h1 class="text-center">Myron Stores Payment Section <br/>Payable = ${{$totalPrice}}</h1>
     
     <div class="row">
