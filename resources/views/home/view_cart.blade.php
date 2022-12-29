@@ -83,8 +83,6 @@
 
     </div>
 
-
-
     <div class="cpy_" style="position: relative; top:175px;">
         <p class="mx-auto">© 2021 All Rights Reserved By Myron Stores
 
