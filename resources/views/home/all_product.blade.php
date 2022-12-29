@@ -34,9 +34,7 @@
     @include('home.footer')
     <!-- footer end -->
     <div class="cpy_">
-        <p class="mx-auto">© 2021 All Rights Reserved By Myron Stores
-
-        </p>
+        <p class="mx-auto">© 2021 All Rights Reserved By Myron Stores</p>
     </div>
     <!-- jQery -->
     <script src="home/js/jquery-3.4.1.min.js"></script>
