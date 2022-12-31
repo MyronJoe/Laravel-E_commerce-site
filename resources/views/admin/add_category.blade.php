@@ -26,8 +26,6 @@
         <div class="main">
             <!-- header -->
             @include('admin.header')
-
-
             <main class="content">
                 <!-- body -->
                 <div class="container-fluid p-0">
@@ -49,12 +47,8 @@
 
                             <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-2" value="Add Category">
                         </form>
-
-
                     </div>
-
                 </div>
-
             </main>
 
             <footer class="footer">
