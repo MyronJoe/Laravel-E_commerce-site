@@ -28,8 +28,6 @@
      
     </div>
    
-    
-
     <!-- footer start -->
     @include('home.footer')
     <!-- footer end -->
