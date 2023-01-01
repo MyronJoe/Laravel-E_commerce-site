@@ -35,7 +35,6 @@
                     <h1 class="h3 mb-3 text-center"><strong>Add Category</strong></h1>
 
                     <div class="col-12 ">
-
                         <form action="{{url('/add_categories')}}" method="POST">
 
                             @csrf
