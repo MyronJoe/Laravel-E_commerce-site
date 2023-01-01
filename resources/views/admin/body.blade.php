@@ -2,8 +2,6 @@
 
     <h1 class="h3 mb-3 text-center"><strong>Analytics</strong> Dashboard</h1>
 
-    
-
     <div class="row">
         <div class="col-sm-12 d-flex">
             <div class="w-100">
