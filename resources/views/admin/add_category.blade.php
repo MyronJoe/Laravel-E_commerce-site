@@ -36,14 +36,11 @@
 
                     <div class="col-12 ">
                         <form action="{{url('/add_categories')}}" method="POST">
-
                             @csrf
-
                             <div class="form-group">
                                 <label for="">Category Name</label>
                                 <input type="text" class="form-control" name="category_name" placeholder="Enter Category">
                             </div>
-
                             <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-2" value="Add Category">
                         </form>
                     </div>
