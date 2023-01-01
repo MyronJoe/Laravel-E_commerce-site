@@ -17,11 +17,8 @@
     <div class="order">
 
         <h1 style="background: navy; color:white; padding:.3em 1em; ">Myron Stores</h1>
-
         <h2>Order Details</h2>
-
         <!-- product/{{$order->image}} -->
-
         <img src="{{ public_path('product/'.$order->image) }}" style="height:180px; object-fit:cover;">
 
         <h3 class="d-xl-table-cell">Customer Name: {{$order->name}}</h3>
