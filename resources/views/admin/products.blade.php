@@ -55,7 +55,6 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     @foreach($products as $key => $product)
                                     <tr>
@@ -82,9 +81,7 @@
                     </div>
 
                 </div>
-
             </main>
-
             <footer class="footer">
                 <!-- footer -->
                 @include('admin.footer')
