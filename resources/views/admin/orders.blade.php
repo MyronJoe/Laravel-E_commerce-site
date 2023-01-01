@@ -25,8 +25,6 @@
         <div class="main">
             <!-- header -->
             @include('admin.header')
-
-
             <main class="content">
                 <!-- body -->
                 <div class="container-fluid p-0">
