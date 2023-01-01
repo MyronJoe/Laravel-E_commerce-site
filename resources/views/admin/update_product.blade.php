@@ -45,18 +45,14 @@
                             <div class=" form-group">
                                 <img src="/product/{{$data->image}}" alt="{{$data->title}}" style="height:100px; width:100px; object-fit:cover;">
                             </div>
-
-
                             <div class="mt-3 form-group">
                                 <label for="">Product Title</label>
                                 <input type="text" class="form-control" value="{{$data->title}}" name="title" placeholder="Enter email" required>
                             </div>
-
                             <div class="mt-3 form-group">
                                 <label for="exampleFormControlTextarea1">Product Description</label>
                                 <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required>{{$data->description}}</textarea>
                             </div>
-
                             <div class="mt-3 form-group">
 
                                 <label for="exampleFormControlSelect1">Category</label>
@@ -68,17 +64,14 @@
                                 </select>
 
                             </div>
-
                             <div class="mt-3 form-group">
                                 <label for="">Price</label>
                                 <input type="number" name="price" value="{{$data->price}}" class="form-control" placeholder="Price" required>
                             </div>
-
                             <div class="mt-3 form-group">
                                 <label for="">Discount Price</label>
                                 <input type="number" value="{{$data->discount_price}}" name="dis_price" class="form-control" placeholder="Discount Price">
                             </div>
-
                             <div class="mt-3 form-group">
                                 <label for="">Product Quantity</label>
                                 <input type="number" name="quantity" min="0" value="{{$data->quantity}}" class="form-control" placeholder="Product Quantity" required>
