@@ -37,7 +37,6 @@
                     <div class="col-12 ">
 
                         <form action="{{url('send_user_email', $order->id)}}" method="POST" enctype="multipart/form-data">
-
                             @csrf
 
                             <div class="mt-3 form-group">
@@ -72,8 +71,6 @@
 
                             <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-4" value="Send Mail">
                         </form>
-
-
                     </div>
 
                 </div>
