@@ -146,9 +146,7 @@
             </main>
 
             <footer class="footer">
-                <!-- footer -->
                 @include('admin.footer')
-
             </footer>
         </div>
     </div>
