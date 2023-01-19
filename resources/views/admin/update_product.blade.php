@@ -24,10 +24,8 @@
         @include('admin.sidebar')
 
         <div class="main">
-            <!-- header -->
             @include('admin.header')
             <main class="content">
-                <!-- body -->
                 <div class="container-fluid p-0">
 
                     <a style="float: right;" class="btn btn-primary mb-2" href="{{ url('view_product') }}">View Products</a>
