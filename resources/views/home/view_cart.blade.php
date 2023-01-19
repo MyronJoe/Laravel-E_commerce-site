@@ -23,8 +23,6 @@
 <body>
     <!-- header section strats -->
     @include('home.header')
-    <!-- end header section -->
-
 
     <div class="container p-4">
 
