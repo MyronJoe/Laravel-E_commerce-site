@@ -27,7 +27,7 @@
             <!-- header -->
             @include('admin.header')
             <main class="content">
-                <!-- body -->
+         
                 <div class="container-fluid p-0">
 
                     <a style="float: right;" class="btn btn-primary mb-2" href="{{ url('view_category') }}">View Category</a>
