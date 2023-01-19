@@ -78,9 +78,6 @@
                                 <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                             </div>
 
-
-                            <!-- <button type="submit" class="btn btn-primary mb-2">Submit</button> -->
-
                             <input style="background-color: navy; color:white" type="submit" class="btn btn-primary mt-4" value="Update Product">
                         </form>
 
