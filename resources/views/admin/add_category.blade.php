@@ -24,7 +24,6 @@
         @include('admin.sidebar')
 
         <div class="main">
-            <!-- header -->
             @include('admin.header')
             <main class="content">
          
