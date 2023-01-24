@@ -29,7 +29,6 @@
 
 
             <main class="content">
-                <!-- body -->
                 <div class="container-fluid p-0">
 
                 <a style="float: right;" class="btn btn-primary mb-2" href="{{ url('add_category') }}">Add Category</a>
