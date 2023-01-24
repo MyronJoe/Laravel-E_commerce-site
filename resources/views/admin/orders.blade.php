@@ -26,7 +26,6 @@
             <!-- header -->
             @include('admin.header')
             <main class="content">
-                <!-- body -->
                 <div class="container-fluid p-0">
 
                     <h1 class="h3 mb-3 text-center"><strong>All Orders</strong></h1>
