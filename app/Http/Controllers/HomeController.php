@@ -287,6 +287,7 @@ class HomeController extends Controller
 
             $order->delivery_status = "Processing";
             $order->payment_status = "Paid";
+            // $order->trackingId = "TR". rand("123456789", "098765432");
 
 
             $order->save();
